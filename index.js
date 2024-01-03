@@ -39,8 +39,8 @@ const colors = require('colors');
 
 const app = express();
 const apiServer = http.createServer(app);
-const ioServer = http.createServer(); // Create a separate server for Socket.IO
-const io = socketIO(ioServer);
+// const ioServer = http.createServer(); // Create a separate server for Socket.IO
+const io = socketIO(apiServer);
 
 // Use morgan middleware for logging HTTP requests
 const customFormat = morgan('         :method   :url    status ::status  -  Length ::res[content-length]   -   Time ::response-time ms', {
@@ -154,6 +154,6 @@ apiServer.listen(apiPort, () => {
   logger.info(`API Server is running on port ${apiPort}`);
 });
 
-ioServer.listen(socketIOPort, () => {
-  logger.info(`Socket.IO Server is running on port ${socketIOPort}`);
-});
+// ioServer.listen(socketIOPort, () => {
+//   logger.info(`Socket.IO Server is running on port ${socketIOPort}`);
+// });
