@@ -1,0 +1,10 @@
+Lottay-app/
+  |- .env
+  |- index.js.js
+  |- routes/
+  |    |- specificApiRoutes.js
+  |- models/
+  |    |- specificApiModel.js
+  |- controllers/
+  |    |- specificApiController.js
+ 
